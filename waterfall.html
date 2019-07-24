@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>I love you three thousand times</title>
+  <link rel="stylesheet" href="waterfall.css">
+  <script type="text/javascript">
+    window.onload=function(){
+        var main = document.getElementById("main");
+        var mybox=[];
+        mybox=document.getElementsByClassName("box");
+        var boxWidth = mybox[0].offsetWidth;//获取每一个块的宽度
+        var num = Math.floor(main.offsetWidth/boxWidth);//对浮点数向下取整  4
+        // alert(main.offsetWidth);
+        // alert(main.clientWidth);
+        //alert(main.documentElement.clientWidth); 获取浏览器窗口文档区域的宽度，不包括滚动条
+        main.style.cssText="width:" + num*boxWidth + "px;margin:0 auto;";
+        
+        var compareArray = [];
+        for (var i = 0; i<mybox.length; i++) {
+            if(i<num){
+                compareArray[i] = mybox[i].offsetHeight;
+            }else{
+                var minHeight = Math.min.apply('',compareArray);
+                //alert(compareArray + ",min=" + minHeight);
+                var minHkey=compareArray.indexOf(minHeight);
+                //var minHkey = getMinHeightKey(compareArray,minHeight);
+               
+                mybox[i].style.position = "absolute";
+                mybox[i].style.top = minHeight + "px";
+                mybox[i].style.left =mybox[minHkey].offsetLeft + "px";
+                compareArray[minHkey] += mybox[i].offsetHeight;
+            } 
+        }
+    }
+</script>
+</head>
+<body>
+  <div id="title" >
+    <div class="top">宇宙不毁灭计生办不放假</div>
+  </div>
+<div id="main">
+  <div class="box">
+      <div class="pic">
+           <img src="ENDGAME/img1.jpg">
+      </div>
+  </div>
+
+  <div class="box">
+    <div class="pic">
+         <img src="ENDGAME/img2.jpg">
+    </div>
+</div>
+
+<div class="box">
+  <div class="pic">
+       <img src="ENDGAME/img3.jpg">
+  </div>
+</div>
+
+<div class="box">
+  <div class="pic">
+       <img src="ENDGAME/img4.jpg">
+  </div>
+</div>
+
+<div class="box">
+  <div class="pic">
+       <img src="ENDGAME/img5.jpg">
+  </div>
+</div>
+
+
+<div class="box">
+  <div class="pic">
+       <img src="ENDGAME/img6.jpg">
+  </div>
+</div>
+
+<div class="box">
+  <div class="pic">
+       <img src="ENDGAME/img7.jpg">
+  </div>
+</div>
+
+<div class="box">
+  <div class="pic">
+       <img src="ENDGAME/img8.png">
+  </div>
+</div>
+
+<div class="box">
+  <div class="pic">
+       <img src="ENDGAME/img9.jpeg">
+  </div>
+</div>
+
+<div class="box">
+  <div class="pic">
+       <img src="ENDGAME/img10.jpg">
+  </div>
+</div>
+
+<div class="box">
+  <div class="pic">
+       <img src="ENDGAME/img11.jpg">
+  </div>
+</div>
+
+<div class="box">
+  <div class="pic">
+       <img src="ENDGAME/img12.jpeg">
+  </div>
+</div>
+
+  
+</body>
+</html>
